@@ -1,0 +1,374 @@
+This file contains four sections:  ZanySoft programs, Upcoming ZanySoft
+programs, ZDir notes, and ZDir release history.
+
+ZanySoft programs:
+-------------------------------------------------------------------------------
+        ZDir, a powerful directory utility with coloring by extension, sorting,
+                easy configuration, full wildcards, and more.
+                Current version: 2.1
+
+        ZD86 (ZanySoft Debugger), a powerful symbolic debugger with pull down
+                and pop up menus, multiple resizable overlapping windows, and
+                of course, it is fully configurable.
+                Current version: 1.01
+
+Upcoming ZanySoft programs:
+-------------------------------------------------------------------------------
+        ZDir for Win32
+
+
+ZDir notes:
+-------------------------------------------------------------------------------
+ZanySoft Dir (ZDir) is an easy to use and very powerful directory lister.  The
+main purpose of ZDir is to replace the generic DIR command with a fast, easily
+readable display with more functionality.  It can organize the file listing
+with many sorting options, color files based upon their extension, choose how
+many columns to use in the display, find files, draw a tree of the directory
+structure, use full-scale wildcards, and much more.  Besides being powerful and
+easy to use, ZDir is also easy to configure with the included configuration
+program ZDircfg.  It is very easy for a novice computer user to learn how to
+use ZDir, but has many features that expand upon the basic directory listing
+capability.
+
+The complete ZDir package consists of ZDir.com, ZDir.doc, ZDircfg.exe, and
+Readme.doc (this file).  If you do not have all of these files, then you do not
+have the complete ZDir package version 2.1.  If you want to jump right in to
+using ZDir, pause for a second and read section 3 of ZDir.doc, the Quick-start.
+It should give you a brief overview of what ZDir is all about in only a couple
+of minutes.
+
+ZDir is Shareware, and if you choose to use it after a short trial period then
+you are obligated to pay for it.  For a more thorough discussion of Shareware,
+see section 2 of the manual (ZDir.doc).  Typing ZDir /R from the DOS prompt
+will display a registration form, which you can print out, fill out, and send
+in.
+                            
+ZDir release history:
+-------------------------------------------------------------------------------
+        2.1 Enhancements:
+
+                When waiting for a keypress after each screen, the enter
+                key now scrolls an entire screen.  The down arrow key
+                scrolls only one line.
+
+                When writing to alternate output (/Lfilename), waiting for
+                a keypress is turned off.  To still have ZDir wait for a key
+                every screen, put /K on the command line after /Lfilename.
+
+        2.1 Bug fixes:
+
+                The method used in ZDir 2.0 to get the volume serial number
+                caused the DOS cache to be cleared, which really could slow
+                down ZDir.  The serial number is no longer displayed.
+
+                Disks that can store over 655M caused a divide overflow in
+                all previous versions of ZDir.  *Fixed*
+
+                The /t and /f options would not descend directories that were
+                marked as read only, hidden, or system.  *Fixed*
+
+                When displaying a tree, the total file size in a directory
+                is now displayed in terms of 1000 byte blocks, not 1024.
+                This is now consistent with the display of file sizes
+                in normal listings of over 1,000,000 which is in terms of
+                millions.
+
+                When Default edit->File list choices->Entire entry in file
+                color was set to yes, sometimes blank spaces would be printed
+                in the incorrect color.  *Fixed*
+-------------------------------------------------------------------------------
+        2.0 Enhancements:
+
+                Full-scale wildcards are now accepted.  Full wildcards are much
+                more flexible than normal DOS wildcards:  *'s and ?'s can be
+                put anywhere, such as ZDir *z??d*8*6?.?o* .  Since this
+                replaces string searching, string searching has been removed.
+                For the same function, just surround the string with *, like
+                this: ZDir *string* .
+
+                The configuration option as well as many other options have
+                been removed from ZDir and placed into a separate configuration
+                program called ZDircfg.  This should make the configuration
+                and upgrading of ZDir painless.  ZDircfg is a menu driven
+                program that allows you to set all colors, defaults, and
+                extensions, and save and load configuration information
+                from ZDir.  Because of this, most configuration options have
+                been removed from ZDir for ease of use, so only non-configurable
+                commands (/F, /?, and /R for example) are left.  Changing
+                the number of columns and primary sort are still available
+                on the command line of ZDir for one-time runs, which you
+                do not want to make defaults.
+
+                New feature /T added to make a directory tree from the
+                specified directory on down, giving the number of files
+                and total size of each directory, adding up only files which
+                match the filespec.
+
+                Option added in ZDircfg to have directories appear clumped
+                together at the beginning or end of the file list, or sorted
+                with other files like in the past.
+
+                Configured extensions may now have wild cards in them!  Lower
+                number extensions have priority, so that the more general the
+                extension specification (w or w/o wildcards) the earlier in
+                the extension list it should be put (C should be earlier than
+                C??, otherwise the C?? color would be found before the C color).
+
+                A new command line option, /U, makes ZDir only list files
+                that match "user extensions", which are set in ZDircfg.
+
+                When prompted to press any key, the Enter key prints one line
+                and then waits for another key.  Any key except for the Enter
+                key prints another full screen of data.
+
+                ZDir works with size text screen, including 132 column text
+                modes of many super VGA cards.
+
+                Setting sorting by attribute on the command line removed,
+                and writing ANSI color codes to the file specified by /L,
+                which used to by /M, is now /A
+
+                Disks with a serial number now optionally have the serial
+                number printed next to the volume label.
+
+                In alternate output files, interecting or corner lines are
+                now represented by +, not *.
+
+                Sorting by attribute eliminated--it's useless.
+
+        2.0 Bug fixes:
+
+                File sizes of over 100,000 were often reported slightly
+                lower than the actual size.  *Fixed*
+
+                All previous versions of ZDir sometimes would give incorrect
+                listings or even lock up in directories with 254 or 255
+                files.  *Fixed*
+
+                ZDir 1.3 and 1.4 did not display the top two lines on
+                8088/8086 system.  *Fixed*
+
+                ZDir 1.4 would lock up on CGA systems--sorry about that!
+                *Fixed*
+
+                When doing a Full path search, the final report would give
+                an incorrect number of directories searched (in version 1.4
+                only).  *Fixed*
+
+                The alternate output would not get the first line of the
+                display (in version 1.4 only).  *Fixed*
+
+                Now, Ctrl-C and Ctrl-break will actually quit ZDir at almost
+                any time.
+-------------------------------------------------------------------------------
+        1.4 Bug fixes:
+
+                A slight glitch in the attribute changing mechanism sometimes
+                would cause a divide overflow.  *Fixed*
+
+                ZDir would sometimes not scroll up the screen at the end,
+                and so the bottom line of information would be overwritten.
+                *Fixed*
+
+                If a directory had the same extension (or lack thereof) as
+                one of the 30 specified on the configuration screen, the
+                directory name was shown in the extension color, not the
+                directory color.  *Fixed*
+
+                If run in graphics mode ZDir did not switch into text mode
+                and display a listing.  *Fixed*
+
+                File entries with a year or 2101 or larger would make the
+                display be misaligned.  *Fixed*
+
+        1.4 Enhancements:
+
+                The current time and date as reported by DOS are now printed
+                on the top line of the display.  The second line has the path
+                and volume label.
+
+                Certain long paths will not fit on the same line as the
+                volume label.  If a path will not fit, the minimum number
+                of directories needed to make the path fit are removed
+                from the display, replaced by a \...\.  For example, running
+                ZDir c:\dos\util\sharewar.e\dir\awesome\colorful\best\zdir.com
+                ZDir may need to replace the path spec with
+                c:\...\dir\awesome\colorful\best\zdir.com in order to fit it
+                on the screen.
+
+                Commas are now printed in the numbers in the summaries for
+                easier reading.  A new options in the Default Configuration
+                Screen allows you to select whether file sizes have commas
+                put in them as well (except for 6 digit file sizes in non-
+                one column mode -- commas wouldn't fit!).  The new command
+                line option , (e.g. ZDir /,) toggles the default.
+
+                In the Color Configuration Screen, page up and page down
+                now change the foreground color, and ctrl-page up and
+                ctrl-page down change the background color.
+
+                When string searching is enabled and you run
+                ZDir d:\directory, ZDir will assume you meant
+                ZDir d:\directory\*.*, saving you the typing of the \.
+
+                When doing file finds with the F option, directories are
+                shown directly after their parent, instead of all directories
+                one level deep, then all directories 2 levels deep, etc.
+
+                New choice in Default Configuration Screen:  All information
+                about each file can be the same color as the file.
+
+                The Y command in conjunction with an attribute changing
+                command will now change the attributes of all found
+                directories as well as all found files.
+
+                Ctrl-Break will now abort ZDir most of the time.
+
+                During the "advertisement" in the unregistered version,
+                the escape key now quits back to DOS.
+
+                ZDir now fully supports any number of rows on the screen
+                (including 43 and 50 line modes).
+-------------------------------------------------------------------------------
+        1.3 Bug fixes:
+                When the disk drive being listed was created with SUBST or
+                ASSIGN ZDir incorrectly tried to list (drive):\\*.*.  *Fixed*
+
+                When Auto-detect columns was on and ZDir /1 (or 2, 3, 4, 6, or
+                W) /q was then typed, auto-detection was not turned off.
+                *Fixed*
+
+                Files with a year of 200x were displayed incorrectly.
+                *Fixed*
+
+                When run directly from other programs, there was usually a
+                divide overflow.  *Fixed*
+
+                String searches of over 8 characters were truncated to only
+                8 characters.  *Fixed*
+
+        1.3 Enhancements:
+
+                Secondary sort type can now be specified in the /Q Default
+                Configuration Screen.  Any ties between files on the primary
+                sort type will be broken by the secondary sort type.  Any ties
+                on the secondary sort type are broken by filename.
+
+                In the Default Configuration Screen, two new choices have been
+                added:  (1) Show the . and .. files, or totally ignore them,
+                and (2) include directories in the file count, or do not count
+                them.
+
+                The command L(filename) sends the output of ZDir to a file
+                or device.  It writes graphic lines only if that option is on.
+                It will not write over existing files.
+                Example:  ZDir *.WK3 /LC:\spread.lst
+                To send output to the modem, type ZDir /Laux
+                The P command has been disabled, so to send output to the
+                printer, type ZDir /Lprn
+
+                The M command turns on ANSI color control on the secondary
+                output device specified with the L command, for this run only.
+                NEVER turn this on when output is to the printer.
+
+                The Color configuration screen is now more user friendly,
+                as you can hit page up and page down to change the color
+                when the arrow points to the extension.
+
+                The Network attribute is now shown whenever the other
+                attributes are shown, at the end (if all file attributes
+                are on, it would show AHRSN).  With 2 column display, the
+                N may touch the file date.
+-------------------------------------------------------------------------------
+        1.2 Bug fixes:
+                File sizes over 1 meg were displayed 1 character to the left.
+                *Fixed*
+
+                Directories with over 1000 files would make ZDir lock up.
+                *Fixed*
+
+                Volume labels were sometimes displayed with a . (period) that
+                was incorrect.  *Fixed*
+
+        1.2 Enhancements:
+
+                String searching function--when a file name is given without
+                wild cards, all files are searched for the string anywhere
+                in the name (I option toggles on/off).
+
+                When outputting to the printer, display is shown on the
+                screen as well, and the G option toggles printing graphic
+                line characters or replacing them.
+
+                The Q command now invokes a full screen editor of default
+                options.
+
+                K command toggles the wait for key at the end of every
+                displayed screen, B command toggles BIOS screen writes,
+                and E command toggles clearing the screen to start.
+
+                Full path search with the F command will locate all files
+                in the specified directory and all of its subdirectories.
+
+                Auto-column detection (with the U command) will determine
+                how many columns to use in the display depending on the
+                number of files found.
+
+                One column mode now displays the space taken up be each
+                individual file, in the 'totals information' color, as
+                well as the network attribute with an N.
+
+                Attribute changing added with the [+|- A|H|R|S] commands.
+-------------------------------------------------------------------------------
+        1.1 Bug fixes:
+
+                File errors (when saving default colors and settings) were
+                not reported.  *Fixed*
+
+                In certain cases file sizes with a 0 in the thousands' place
+                would be printed incorrectly.  *Fixed*
+
+                Commands such as ZDir .com were not correctly expanded to
+                ZDir *.com. *Fixed*
+
+                Incorrect drive specification was not reported. *Fixed*
+
+                If ZDir was run from a directory with an extension, then the
+                directory contents were not shown. *Fixed*
+
+                Some large directories had a "using up" space that was
+                incorrect. *Fixed*
+
+        1.1 Enhancements:
+
+                Addition of 2, 3, 4, and 6 column modes added using the #
+                as a command line parameter.
+
+                Printer support through the P parameter.
+
+                The cursor is now placed at the current row on the screen,
+                so that on systems with only 1 drive emulating 2 the
+                message "Place disk in B:" will be visible.
+
+                A - or a / may be used to specify command line arguments.
+                Arguments may be specified by either /|-[args] (such as /z1)
+                or /|-[arg1] /|-[arg2] /|-[arg3] (such as /z -1).
+
+                The configuration is now MUCH more user friendly.
+
+                Files with a volume label attribute are now also printed,
+                so that there is no way to hide files from ZDir.
+
+                Up to 30 extensions and their colors may now be specified.
+
+                File sizes of 1 megabyte or larger are now displayed in terms
+                of Megabytes, such as 1.0M, 14.4M, 52.8M.
+
+                The top of the display is now better, using up only one line,
+                or two if the path specification is long ( >36 characters).
+
+                Secondary sorting by file name added.
+
+                And many other niceties, including a faster sorting algorithm.
+-------------------------------------------------------------------------------
+        1.0     First public release of ZDir.
