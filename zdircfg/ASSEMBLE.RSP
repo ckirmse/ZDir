@@ -1,0 +1,11 @@
+main.obj+
+mainproc.obj+
+config.obj+
+string.obj+
+status.obj+
+winmsgbx.obj+
+menu.obj+
+c:\sa\lib\starts.obj
+zdircfg.exe
+
+c:\sa\lib\sas.lib
